@@ -36,7 +36,7 @@ export function loadNews() {
     )
 }
 
-// the correct axios request without fake delay would be:
+// the correct axios request without fake delay would look like:
 
 // axios.get('https://jsonplaceholder.typicode.com/posts').then(json => {
 //       dispatch({
