@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export function actionsOnDispatch({ dispatch }) {
+export function middlewareActions({ dispatch }) {
   return next => action => {
     if (action.type === 'USER_LOADED') {
       dispatch({
@@ -10,7 +10,6 @@ export function actionsOnDispatch({ dispatch }) {
     }
 
     if (action.type === 'LOAD_NEWS') {
-      console.log('load news')
       return axios.get('https://jsonplaceholder.typicode.com/posts').then(
         json =>
           new Promise(resolve => {
@@ -27,7 +26,6 @@ export function actionsOnDispatch({ dispatch }) {
     }
 
     if (action.type === 'LOAD_USER') {
-      console.log('load news')
       return axios.get('https://jsonplaceholder.typicode.com/users/1').then(
         json =>
           new Promise(resolve => {
